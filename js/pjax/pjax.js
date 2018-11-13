@@ -32,6 +32,9 @@ $(function () {
   var waitTime = 1000
   // 滚动一顶部方法
   function scrollToTop () {
+    if (scrollY > 100) {
+      $(document).scrollTop(100)
+    }
     $("html, body").animate({ scrollTop: 0 + "px" }, { duration: 500, easing: "swing" })
   }
   function pjaxInit () {
@@ -53,8 +56,8 @@ $(function () {
       callbacks: {
         ajax: {
           beforeSend: function (event, arg, data, settings) {
-            // matchIndex = settings.url == 'https://sukinosuki.github.io/?pjax=1'
-            matchIndex = settings.url == 'http://127.0.0.1:4000/?pjax=1'
+            matchIndex = settings.url == 'https://sukinosuki.github.io/?pjax=1'
+            // matchIndex = settings.url == 'http://127.0.0.1:4000/?pjax=1'
             // matchIndex = location.pathname === '/'
 
             // console.log('setting ', settings.url)
@@ -92,7 +95,7 @@ $(function () {
     // 前往首页
     NProgress.start()
     // 滚动到顶部
-    scrollToTop()
+    // scrollToTop()
 
     $('#main').velocity(
       {
@@ -201,16 +204,16 @@ $(function () {
   queue.on('complete', handleComplete, this)
   queue.on('progress', function (e) {
     // console.log('progress ', e.progress, typeof e.progress)
-    $('.progress-num').text(e.progress.toFixed(2) * 100)
+    $('.progress-num').text(parseFloat(e.progress).toFixed(2) * 100)
   })
   queue.loadFile({ id: 'bgm', src: '/img/bgm.mp3' })
   queue.loadManifest([
     // { id: 'issen', src: '/img/issen.png' },
-    { id: 'img1', src: '/img/bg.png' },
-    { id: 'img2', src: '/img/sidebar_header.png' },
-    { id: 'mihono', src: '/img/mihono.png' },
-    { id: 'post_qiuji01', src: '/img/post_qiuji01.png' },
-    { id: 'logo', src: '/img/logo.png' },
+    // { id: 'img1', src: '/img/bg.png' },
+    // { id: 'img2', src: '/img/sidebar_header.png' },
+    // { id: 'mihono', src: '/img/mihono.png' },
+    // { id: 'post_qiuji01', src: '/img/post_qiuji01.png' },
+    // { id: 'logo', src: '/img/logo.png' },
     { id: 'goto_top', src: '/img/goto_top.png' },
     { id: 'goku_BG01', src: '/img/goku_BG01.png' },
     { id: 'goku_bg02', src: '/img/goku_bg02.png' },
