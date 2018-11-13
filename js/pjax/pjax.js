@@ -53,7 +53,13 @@ $(function () {
       callbacks: {
         ajax: {
           beforeSend: function (event, arg, data, settings) {
+            // matchIndex = settings.url == 'https://sukinosuki.github.io/?pjax=1'
             matchIndex = settings.url == 'http://127.0.0.1:4000/?pjax=1'
+            // matchIndex = location.pathname === '/'
+
+            // console.log('setting ', settings.url)
+            // console.log('location.pathname ', location.pathname)
+            // console.log('matchIndex ', matchIndex)
             if (matchIndex) {
               $('.sidebar-toggle').removeClass('hide')
               $('.back-arrow').addClass('hide')
@@ -63,6 +69,9 @@ $(function () {
               $('.back-arrow').removeClass('hide')
             }
             pjaxSend()
+            $('.sidebar').removeClass('open')
+            $('.sidebar-overlay').removeClass('active')
+            document.documentElement.style.overflow = "auto";
           }
         },
         update: {
