@@ -192,7 +192,7 @@ $(function () {
   queue.on('complete', handleComplete, this)
   queue.on('progress', function (e) {
     // console.log('progress ', e.progress, typeof e.progress)
-    $('.progress-num').text(e.progress * 100)
+    $('.progress-num').text(e.progress.toFixed(2) * 100)
   })
   queue.loadFile({ id: 'bgm', src: '/img/bgm.mp3' })
   queue.loadManifest([
