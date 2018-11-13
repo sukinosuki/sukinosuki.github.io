@@ -2876,12 +2876,12 @@ body {
     font-size: 14px;
 }
 .loading {
-    position: fixed;
+    /* position: fixed;
     width: 100%;
     height: 100%;
     background-color: #000;
-    z-index: 900;
-    pointer-events: none;
+    z-index: 900; */
+    /* pointer-events: none; */
 }
 .loading-tip {
     position: absolute;
