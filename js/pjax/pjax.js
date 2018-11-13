@@ -41,7 +41,7 @@ $(function () {
     $.pjax({
       area: '#main',
       wait: waitTime,
-      interval: 1000,
+      // interval: 1000,
       link: ['.pjax-link', '.post_category-link', '.sidebar_archives-link'],
       // cache: {
       // },
@@ -199,21 +199,16 @@ $(function () {
 
   // loading-------------------------------end
   // preload--------------------------------start
-  var queue = new createjs.LoadQueue()
+  var queue = new createjs.LoadQueue(false)
   queue.installPlugin(createjs.Sound)
   queue.on('complete', handleComplete, this)
   queue.on('progress', function (e) {
-    // console.log('progress ', e.progress, typeof e.progress)
     $('.progress-num').text(parseFloat(e.progress).toFixed(2) * 100)
   })
-  queue.loadFile({ id: 'bgm', src: '/img/bgm.mp3' })
+  // queue.loadFile({ id: 'bgm', src: '/img/bgm.mp3' })
   queue.loadManifest([
-    // { id: 'issen', src: '/img/issen.png' },
-    // { id: 'img1', src: '/img/bg.png' },
-    // { id: 'img2', src: '/img/sidebar_header.png' },
-    // { id: 'mihono', src: '/img/mihono.png' },
-    // { id: 'post_qiuji01', src: '/img/post_qiuji01.png' },
-    // { id: 'logo', src: '/img/logo.png' },
+    { id: 'issen', src: '/img/issen.png' },
+    { id: 'emori', src: '/img/emori.png' },
     { id: 'goto_top', src: '/img/goto_top.png' },
     { id: 'goku_BG01', src: '/img/goku_BG01.png' },
     { id: 'goku_bg02', src: '/img/goku_bg02.png' },
