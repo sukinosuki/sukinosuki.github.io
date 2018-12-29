@@ -203,13 +203,17 @@ $(function () {
   queue.installPlugin(createjs.Sound)
   queue.on('complete', handleComplete, this)
   queue.on('progress', function (e) {
-    $('.progress-num').text(parseFloat(e.progress).toFixed(2) * 100)
+    $('.progress-num').text(parseInt(e.progress * 100))
   })
   // queue.loadFile({ id: 'bgm', src: '/img/bgm.mp3' })
   queue.loadManifest([
     { id: 'issen', src: '/img/issen.png' },
     { id: 'emori', src: '/img/emori.png' },
     { id: 'goto_top', src: '/img/goto_top.png' },
+    { id: 'menu_bgm_on', src: '/img/menu_bgm_on.png' },
+    { id: 'menu_bgm_off', src: '/img/menu_bgm_off.png' },
+    { id: 'material-4', src: '/img/random/material-4.png' },
+    { id: 'material-13', src: '/img/random/material-13.png' },
     { id: 'goku_BG01', src: '/img/goku_BG01.png' },
     { id: 'goku_bg02', src: '/img/goku_bg02.png' },
     { id: 'mainvisual1', src: '/img/mainvisual1.png' }
