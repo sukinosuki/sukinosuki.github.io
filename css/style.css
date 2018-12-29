@@ -2884,24 +2884,24 @@ body {
     /* pointer-events: none; */
 }
 .loading-tip {
-    position: absolute;
+    /* position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
     color: #fff;
-    font-family: inherit;
+    font-family: inherit; */
 }
 .loading-tip .loading-text{
-    display: block;
+    /* display: block;
     margin-bottom: 20px;
     font-size: 20px;
     color: #aaa;
-    letter-spacing: 3px;
+    letter-spacing: 3px; */
 }
 .loading-tip .progress-num {
-    font-size: 40px;
-    font-family: cursive;
+    /* font-size: 40px;
+    font-family: cursive; */
 }
 .loading-tip .progress-num::after {
     content: ' %';
